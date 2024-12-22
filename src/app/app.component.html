@@ -1,0 +1,9 @@
+<div class="app-container">
+  <h1>{{ title }}</h1>
+  
+  <app-date-search (dateChange)="dateChange($event)"></app-date-search>
+
+  <app-weather-list></app-weather-list>
+
+  <app-city-weather [weatherData]="weatherData" [selectedDate]="selectedDate"></app-city-weather>
+</div>

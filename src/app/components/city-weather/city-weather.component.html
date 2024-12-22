@@ -1,0 +1,14 @@
+<div *ngIf="cityWeather">
+  <h2>{{ cityWeather.city }} Weather</h2>
+  <div *ngIf="selectedDate">
+    <h3>Weather for {{ selectedDate | date: 'shortDate' }}</h3>
+    <p>Temperature: {{ getTemperature() }}°C</p>
+    <p>Humidity: {{ getHumidity() }}%</p>
+    <p [ngClass]="getTempClass(getTemperature() || 0)">
+      Temperature Classification: {{ getTempClass(getTemperature() || 0) }}
+    </p>
+  </div>
+  <div *ngIf="!selectedDate">
+    <p>Select a date to see the weather forecast.</p>
+  </div>
+</div>

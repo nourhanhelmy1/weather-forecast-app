@@ -1,0 +1,21 @@
+<div *ngIf="weatherData.length > 0" class="weather-container">
+  <div *ngFor="let city of weatherData" class="city-card">
+    <div class="city-header">
+      <h2 class="city-name">{{ city.city }}</h2>
+      <p class="city-temp">{{ city.forecast[0].temperatureCelsius }}°C</p>
+    </div>
+    <div class="forecast-details">
+      <ul>
+        <li *ngFor="let forecast of city.forecast" class="forecast-item">
+          <div class="forecast-date">
+            <p class="formatted-date">{{ forecast.date | date: 'fullDate' }}</p>
+          </div>
+          <div class="forecast-info">
+            <p><strong>Temperature:</strong> {{ forecast.temperatureCelsius }}°C</p>
+            <p><strong>Humidity:</strong> {{ forecast.humidity }}%</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
